@@ -1,14 +1,17 @@
-function ExpenceItem() {
+import "./ExpenceItems.css";
+
+function ExpenceItem(props) {
   return (
     <div>
-      <div>
-        <h1>Expence Items</h1>
+      <div className="expense-item">
+        <div className="expense-item__description">
+          <h2>{props.item}</h2>{" "}
+        </div>
+        <div> {props.location}---</div>
+        <div className="expense-item__price">Rs{props.price} </div>
       </div>
-      <div>Food Rs 10</div>
-      <div>Petrol Rs 100 </div>
-      <div>Movies Rs 200 </div>
     </div>
   );
 }
 
-export default ExpenceItem
+export default ExpenceItem;
