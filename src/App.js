@@ -1,13 +1,37 @@
-import ExpenceItem from "./components/ExpenceItems";
+import ExpenseItem from "./components/ExpenseItems";
 
 function App() {
-  let expenses = [{ item: "Books", price: 500, location: "Vani Books Store" },{ item: "Car", price: 2000000, location: "Thar Showroom(Hyderabad)" },{ item: "Bike", price: 280000, location: "Royal Enfield Showroom(Hyderabad)" }];
+  let expenses = [
+    {
+      item: "Books",
+      price: 500,
+      location: "Vani Books Store",
+      date: new Date(2022, 10, 25),
+    },
+    {
+      item: "Car",
+      price: 2000000,
+      location: "Thar Showroom(Hyderabad)",
+      date: new Date(2022, 11, 11),
+    },
+    {
+      item: "Bike",
+      price: 280000,
+      location: "Royal Enfield Showroom(Hyderabad)",
+      date: new Date(2022, 10, 25),
+    },
+  ];
   return (
     <div>
       <h2>Let's get started!</h2>
-      {expenses.map((expense)=><ExpenceItem item = {expense.item} price = {expense.price} location = {expense.location}></ExpenceItem>
-      )}
-      
+      {expenses.map((expense) => (
+        <ExpenseItem
+          item={expense.item}
+          price={expense.price}
+          location={expense.location}
+          Date={expense.date}
+        />
+      ))}
     </div>
   );
 }
