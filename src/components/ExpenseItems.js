@@ -1,19 +1,26 @@
 import ExpenseDate from "./ExpenseDate";
 import ExpenceDetails from "./ExpenseDetails";
 import "./ExpenseItems.css";
+import Card from "./Card";
 
 function ExpenseItem(props) {
+
+  let DeleteItem = (e) =>{
+    let expenseItem = e.target
+  expenseItem.parentElement.remove()
+  }
+
   return (
-    <div className="expense-item">
+    <Card> <div className="expense-item"> 
       <ExpenseDate Date={props.Date} />
-      <div className="expense-item__description">
         <ExpenceDetails
           item={props.item}
           location={props.location}
           price={props.price}
         />
-      </div>
-    </div>
+        <button onClick = {DeleteItem}>Delete</button>
+        </div>
+    </Card>
   );
 }
 
